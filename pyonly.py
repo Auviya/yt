@@ -25,7 +25,7 @@ if(len(sys.argv)!=5):
 artist=sys.argv[1]
 n=int(sys.argv[2])
 t=int(sys.argv[3])
-output=sys.argv[4]
+#output=sys.argv[4]
 # print(artist)
 # print("t"+str(t))
 # print("n"+str(n))
@@ -189,7 +189,7 @@ def merge(n):
         for i in range(1,n):
             aud1=AudioSegment.from_file("downloads/aud"+str(i)+".mp3", format="mp3")
             aud=aud+aud1
-        aud.export(output+'.mp3',format="mp3")
+        aud.export('final.mp3',format="mp3")
     except:
         print("There was an error in merging please try again")
 
