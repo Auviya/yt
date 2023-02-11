@@ -6,19 +6,21 @@
 <body>
     <h1>Upload File and Run Program</h1>
     <form method="post" enctype="multipart/form-data" action="{{ url_for('run_program') }}">
-        <input type="file" name="file">
-        <br>
-        <br>
-        <label>Weights:</label>
+   
+        <label>Artist:</label>
         <input type="text" name="string1">
         <br>
         <br>
-        <label>Impact:</label>
+        <label>no:</label>
         <input type="text" name="string2">
         <br>
         <br>
+         <label>Duration:</label>
+        <input type="text" name="string3">
+        <br>
+        <br>
         <label>Email Id:</label>
-        <input type="email" name="string3">
+        <input type="email" name="string4>
         <br>
         <br>
         <input type="submit" value="Run Program">
