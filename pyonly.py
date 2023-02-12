@@ -1,7 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
+# #!/usr/bin/env python
+# # coding: utf-8
 
-# In[1]:
+# # In[1]:
 
 
 import pandas as pd
@@ -15,6 +15,10 @@ from pydub import AudioSegment
 from moviepy.editor import VideoFileClip
 import shutil
 import requests
+# yt = YouTube('https://www.youtube.com/watch?v=PJWemSzExXs&list=RDPJWemSzExXs&start_radio=1');
+# video_length = yt.length
+# print("heya")
+# print(video_length)
 
 
 # In[38]:
@@ -25,7 +29,7 @@ if(len(sys.argv)!=5):
 artist=sys.argv[1]
 n=int(sys.argv[2])
 t=int(sys.argv[3])
-#output=sys.argv[4]
+output=sys.argv[4]
 # print(artist)
 # print("t"+str(t))
 # print("n"+str(n))
@@ -44,7 +48,7 @@ def get_data(url):
             urls.append(f"https://www.youtube.com/watch?v={v['id']['videoId']}")
         return urls
 
-    
+
 
 url=f"https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&videoDuration=short&maxResults={n*2}&q={artist} songs&key=AIzaSyDnDhzGaA9eB1sgg_hQjL0KgueCMnK0_Ww";
 
@@ -90,7 +94,7 @@ def sort(urls,t,n):
             video_length = yt.length
             vlen.append(video_length)
             # Print the video length
-            print("Video length",i," :", video_length, "seconds") 
+            print("Video length",i," :", video_length, "seconds")
         except:
             continue
     df=(pd.DataFrame({'u':urls,'v':vlen}).sort_values(by="v"))
@@ -132,7 +136,7 @@ def downloading(urls,t,n):
                 return
         except:
             continue
-        
+
 
 
 # In[42]:
@@ -151,7 +155,7 @@ def downloading(urls,t,n):
 #         audioclip.write_audiofile(mp3_file)
 #         audioclip.close()
 #         videoclip.close()
-    
+
 
 
 # In[44]:
@@ -170,7 +174,7 @@ def downloading(urls,t,n):
 #         end_time = 30 * 1000 # 60 seconds
 #         cut_audio = audio[start_time:end_time]
 #         cut_audio.export("output"+str(i)+".mp3", format="mp3")
-                
+
 
 
 # In[46]:
@@ -189,7 +193,7 @@ def merge(n):
         for i in range(1,n):
             aud1=AudioSegment.from_file("downloads/aud"+str(i)+".mp3", format="mp3")
             aud=aud+aud1
-        aud.export('final.mp3',format="mp3")
+        aud.export(output+'.mp3',format="mp3")
     except:
         print("There was an error in merging please try again")
 
@@ -254,7 +258,7 @@ except:
 
 
 
- 
+
 
 
 # In[ ]:
