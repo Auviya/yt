@@ -35,9 +35,9 @@ def run_program():
 
 
 
-      subprocess.run(["python3", "pyonly.py",string1,string2,string3])
+      subprocess.run(["python3", "/home/Ayesha230102/mysite/pyonly.py",string1,string2,string3])
 
-      #os.system("python3 /home/auviya/mysite/topsis.py" + f.filename + " " + string1 + " " + string2 + " " + string3)
+      #os.system("python3 /home/Ayesha230102/mysite/pyonly.py" +" " + string1 + " " + string2 + " " + string3)
       # Email credentials
       username = "auviya023@gmail.com"
       password = "hndwjgmirxqqeudu"
@@ -47,7 +47,7 @@ def run_program():
       from_email = username
 
       # File attachment
-      file_path = 'final.mp3'
+      file_path = '/home/Ayesha230102/app/final.mp3'
       file_name = 'final.mp3'
 
       # Email subject and message
